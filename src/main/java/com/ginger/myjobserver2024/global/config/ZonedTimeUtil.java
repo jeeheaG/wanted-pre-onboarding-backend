@@ -4,6 +4,9 @@ import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 
+/**
+ * ZonedDateTime 값을 일관적으로 사용하기 위한 클래스
+ */
 public class ZonedTimeUtil {
     private static final String zoneId ="Asia/Seoul";
     private static final String dateTimePattern = "yyyy/MM/dd HH:mm:ss";
