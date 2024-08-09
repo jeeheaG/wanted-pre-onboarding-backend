@@ -1,5 +1,6 @@
 package com.ginger.myjobserver2024.global.common.response;
 
+import com.ginger.myjobserver2024.global.common.response.code.CommonCode;
 import com.ginger.myjobserver2024.global.common.response.code.StatusCode;
 import com.ginger.myjobserver2024.global.config.ZonedTimeUtil;
 import lombok.Builder;
@@ -37,11 +38,23 @@ public class CommonResponse {
                 .build();
     }
 
-    public static CommonResponse toResponse(StatusCode statusCode, String message) {
+    public static CommonResponse toErrorResponse(StatusCode statusCode) {
+        return CommonResponse.builder()
+                .code(statusCode.getCode())
+                .build();
+    }
+
+    public static CommonResponse toErrorResponse(StatusCode statusCode, String message) {
         return CommonResponse.builder()
                 .code(statusCode.getCode())
                 .message(message)
                 .build();
+    }
 
+    public static CommonResponse toErrorResponse(Exception e) {
+        return CommonResponse.builder()
+                .code(CommonCode.INTERNAL_SERVER_ERROR.getCode())
+                .message(e.getMessage())
+                .build();
     }
 }
