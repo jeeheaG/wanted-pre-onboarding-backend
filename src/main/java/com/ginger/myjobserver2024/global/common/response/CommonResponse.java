@@ -22,14 +22,14 @@ public class CommonResponse {
     private final Object data;
 
 
-    public CommonResponse toResponse(StatusCode statusCode) {
+    public static  CommonResponse toResponse(StatusCode statusCode) {
         return CommonResponse.builder()
                 .code(statusCode.getCode())
                 .message(statusCode.getMessage())
                 .build();
     }
 
-    public CommonResponse toResponse(StatusCode statusCode, Object data) {
+    public static CommonResponse toResponse(StatusCode statusCode, Object data) {
         return CommonResponse.builder()
                 .code(statusCode.getCode())
                 .message(statusCode.getMessage())
@@ -37,7 +37,7 @@ public class CommonResponse {
                 .build();
     }
 
-    public CommonResponse toResponse(StatusCode statusCode, String message) {
+    public static CommonResponse toResponse(StatusCode statusCode, String message) {
         return CommonResponse.builder()
                 .code(statusCode.getCode())
                 .message(message)
