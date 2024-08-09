@@ -1,4 +1,4 @@
-package com.ginger.myjobserver2024.global;
+package com.ginger.myjobserver2024.global.common;
 
 import com.ginger.myjobserver2024.global.config.ZonedTimeUtil;
 import jakarta.persistence.MappedSuperclass;
