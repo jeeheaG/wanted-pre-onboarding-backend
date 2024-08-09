@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
  */
 public enum CommonCode implements StatusCode {
     OK(HttpStatus.OK, "2000", "정상 처리"),
+    INTERNAL_SERVER_ERROR(HttpStatus.INTERNAL_SERVER_ERROR, "5000", "서버 내부 오류")
     ;
 
     private final HttpStatus httpStatus;
