@@ -7,6 +7,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ * 서버가 정상동작 중인지 확인하는 요청을 가진 컨트롤러
+ */
 @Slf4j
 @RestController
 public class HealthCheckController {
