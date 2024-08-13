@@ -27,8 +27,10 @@ public class JobRequestDto {
         @NotNull
         private Long companyId;
 
+        @NotBlank
         private String country;
 
+        @NotBlank
         private String region;
 
         @NotBlank
@@ -36,17 +38,21 @@ public class JobRequestDto {
 
         private Integer reward;
 
+        @NotBlank
         private String tech;
 
         private String content;
 
         public Job toEntity(Company company) {
             return Job.builder()
-                    .id(this.getJobId())
+                    .id(this.jobId)
                     .company(company)
-                    .country(this.getCountry())
-                    .region(this.getRegion())
-                    .reward(this.getReward())
+                    .country(this.country)
+                    .region(this.region)
+                    .position(this.position)
+                    .reward(this.reward)
+                    .content(this.content)
+                    .tech(this.tech)
                     .build();
         }
     }
