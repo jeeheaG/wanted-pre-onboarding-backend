@@ -9,6 +9,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
+/**
+ * 채용공고 도메인의 비즈니스 로직을 담은 Service
+ */
 @Slf4j
 @Service
 public class JobService {
@@ -23,6 +26,11 @@ public class JobService {
         jobRepository.save(job);
     }
 
+    /**
+     * 고유 id 값으로 채용공고를 조회하는 메서드
+     * @param jobId
+     * @return
+     */
     public Job getJobById(Long jobId) {
         Optional<Job> jobOp = jobRepository.findById(jobId);
 

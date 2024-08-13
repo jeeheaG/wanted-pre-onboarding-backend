@@ -30,6 +30,11 @@ public class JobController {
         this.companyService = companyService;
     }
 
+    /**
+     * 채용공고 등록 api
+     * @param requestDto
+     * @return
+     */
     @PostMapping
     public ResponseEntity<Object> createJob(@RequestBody @Valid JobRequestDto.CreateJob requestDto) {
         log.info("[API] POST /jobs");
@@ -41,6 +46,11 @@ public class JobController {
         return ResponseEntity.ok(CommonResponse.toResponse(JobCode.SUCCESS_CREATE_JOB));
     }
 
+    /**
+     * 채용공고 상세 조회 api
+     * @param jobId
+     * @return
+     */
     @GetMapping("/{jobId}")
     public ResponseEntity<Object> getJobDetail(@PathVariable Long jobId) {
         log.info("[API] GET /jobs/{}", jobId);

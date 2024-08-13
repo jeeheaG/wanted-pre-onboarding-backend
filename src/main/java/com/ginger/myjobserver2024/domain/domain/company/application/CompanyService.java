@@ -9,6 +9,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
+/**
+ * 회사 도메인의 비즈니스 로직을 담은 Service
+ */
 @Slf4j
 @Service
 public class CompanyService {
@@ -19,6 +22,11 @@ public class CompanyService {
         this.companyRepository = companyRepository;
     }
 
+    /**
+     * 고유 id 값으로 회사를 조회하는 메서드
+     * @param id
+     * @return
+     */
     public Company findCompanyById(Long id) {
         Optional<Company> companyOp = companyRepository.findById(id);
 

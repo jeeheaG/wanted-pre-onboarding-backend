@@ -5,9 +5,15 @@ import lombok.*;
 
 import java.util.List;
 
+/**
+ * 채용공고 api 응답 dto 모음 클래스
+ */
 public class JobResponseDto {
 
 
+    /**
+     * 채용공고 조회 응답 dto
+     */
     @ToString
     @Getter
     @Builder
@@ -17,6 +23,9 @@ public class JobResponseDto {
         private List<SimpleJob> jobList;
     }
 
+    /**
+     * 채용공고 간략한 조회 클래스
+     */
     @ToString
     @Getter
     @Builder
@@ -30,6 +39,9 @@ public class JobResponseDto {
         private String tech;
     }
 
+    /**
+     * 채용공고 자세한 조회 클래스
+     */
     @ToString
     @Getter
     @Builder
@@ -44,6 +56,11 @@ public class JobResponseDto {
         private String content;
         private List<OtherJob> otherJobList;
 
+        /**
+         * Job 객체를 받아 해당 DTO클래스로 만들어 반환해주는 메서드
+         * @param job
+         * @return
+         */
         public static DetailJob toDto(Job job) { // List<OtherJob> otherJobList
             return DetailJob.builder()
                     .jobId(job.getId())
@@ -59,7 +76,9 @@ public class JobResponseDto {
         }
     }
 
-
+    /**
+     * 채용공고 상세 조회 내 다른 채용공고 데이터 클래스
+     */
     @ToString
     @Getter
     @Builder

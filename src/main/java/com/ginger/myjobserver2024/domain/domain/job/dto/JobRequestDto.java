@@ -7,12 +7,12 @@ import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
 /**
- * 채용공고 api dto 모음 클래스
+ * 채용공고 api 요청 dto 모음 클래스
  */
 public class JobRequestDto {
 
     /**
-     * 채용공고 생성 요청 body dto
+     * 채용공고 생성 요청 dto
      */
     @ToString
     @Getter
@@ -43,6 +43,11 @@ public class JobRequestDto {
 
         private String content;
 
+        /**
+         * Job 객체를 받아 해당 DTO클래스로 만들어 반환해주는 메서드
+         * @param company
+         * @return
+         */
         public Job toEntity(Company company) {
             return Job.builder()
                     .id(this.jobId)
