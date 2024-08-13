@@ -11,9 +11,12 @@ spring:
     password:
   sql:
     init:
-      mode: embedded #always
+      mode: always #embedded?
 
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
     defer-datasource-initialization: true
-
+    hibernate:
+      ddl-auto: update #create, create-drop, none, update
+    show-sql: true # sql logging
+    generate-ddl: true
