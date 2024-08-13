@@ -10,6 +10,8 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public enum StatusCodeDomain {
     COMMON("COMMON", "공통"),
+    JOB("JOB", "채용공고"),
+    COMPANY("COMPANY", "회사"),
     ;
 
     private final String domain;
