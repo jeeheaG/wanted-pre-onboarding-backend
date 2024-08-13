@@ -23,5 +23,16 @@ public class JobService {
         jobRepository.save(job);
     }
 
+    public Job getJobById(Long jobId) {
+        Optional<Job> jobOp = jobRepository.findById(jobId);
+
+        if (jobOp.isEmpty()) {
+            throw new JobException(JobCode.JOB_NOT_FOUND);
+        }
+        else {
+            return jobOp.get();
+        }
+    }
+
 
 }

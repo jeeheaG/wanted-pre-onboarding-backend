@@ -41,4 +41,13 @@ public class JobController {
         return ResponseEntity.ok(CommonResponse.toResponse(JobCode.SUCCESS_CREATE_JOB));
     }
 
+    @GetMapping("/{jobId}")
+    public ResponseEntity<Object> getJobDetail(@PathVariable Long jobId) {
+        log.info("[API] GET /jobs/{}", jobId);
+
+        Job job = jobService.getJobById(jobId);
+
+        return ResponseEntity.ok(CommonResponse.toResponse(JobCode.SUCCESS_GET_JOB_DETAIL, JobResponseDto.DetailJob.toDto(job)));
+    }
+
 }
