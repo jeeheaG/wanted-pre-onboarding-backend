@@ -31,6 +31,9 @@ public class Job extends BaseTimeEntity {
     private String country;
 
     @Column(nullable = false, length = 30)
+    private String region;
+
+    @Column(nullable = false, length = 30)
     private String location;
 
     @Column(nullable = false, length = 30)
