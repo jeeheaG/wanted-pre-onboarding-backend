@@ -56,4 +56,12 @@ public class JobService {
 
         return jobRepository.save(job);
     }
+
+    /**
+     * 채용공고 삭제 메서드
+     * @param jobId
+     */
+    public void deleteJob(Long jobId) {
+        jobRepository.delete(getJobById(jobId));
+    }
 }

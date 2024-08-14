@@ -74,4 +74,13 @@ public class JobController {
         return ResponseEntity.ok(CommonResponse.toResponse(JobCode.SUCCESS_UPDATE_JOB, JobResponseDto.DetailJob.toDto(job)));
     }
 
+    @DeleteMapping
+    public ResponseEntity<Object> deleteJob(@PathVariable Long jobId) {
+        log.info("[API] DELETE /jobs/{}", jobId);
+
+        jobService.deleteJob(jobId);
+
+        return ResponseEntity.ok(CommonResponse.toResponse(JobCode.SUCCESS_DELETE_JOB));
+    }
+
 }
