@@ -1,6 +1,6 @@
-package com.ginger.myjobserver2024.domain.domain.job.dto;
+package com.ginger.myjobserver2024.domain.job.dto;
 
-import com.ginger.myjobserver2024.domain.domain.job.domain.Job;
+import com.ginger.myjobserver2024.domain.job.domain.Job;
 import lombok.*;
 
 import java.util.List;

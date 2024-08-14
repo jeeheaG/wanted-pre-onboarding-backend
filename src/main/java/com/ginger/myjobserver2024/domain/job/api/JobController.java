@@ -1,11 +1,11 @@
-package com.ginger.myjobserver2024.domain.domain.job.api;
+package com.ginger.myjobserver2024.domain.job.api;
 
-import com.ginger.myjobserver2024.domain.domain.company.application.CompanyService;
-import com.ginger.myjobserver2024.domain.domain.company.domain.Company;
-import com.ginger.myjobserver2024.domain.domain.job.application.JobService;
-import com.ginger.myjobserver2024.domain.domain.job.domain.Job;
-import com.ginger.myjobserver2024.domain.domain.job.dto.JobRequestDto;
-import com.ginger.myjobserver2024.domain.domain.job.dto.JobResponseDto;
+import com.ginger.myjobserver2024.domain.company.application.CompanyService;
+import com.ginger.myjobserver2024.domain.company.domain.Company;
+import com.ginger.myjobserver2024.domain.job.application.JobService;
+import com.ginger.myjobserver2024.domain.job.domain.Job;
+import com.ginger.myjobserver2024.domain.job.dto.JobRequestDto;
+import com.ginger.myjobserver2024.domain.job.dto.JobResponseDto;
 import com.ginger.myjobserver2024.global.common.response.CommonResponse;
 import com.ginger.myjobserver2024.global.common.response.code.JobCode;
 import jakarta.validation.Valid;

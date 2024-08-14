@@ -1,7 +1,7 @@
-package com.ginger.myjobserver2024.domain.domain.apply.domain;
+package com.ginger.myjobserver2024.domain.apply.domain;
 
-import com.ginger.myjobserver2024.domain.domain.job.domain.Job;
-import com.ginger.myjobserver2024.domain.domain.user.domain.User;
+import com.ginger.myjobserver2024.domain.job.domain.Job;
+import com.ginger.myjobserver2024.domain.user.domain.User;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.OnDelete;

@@ -1,8 +1,7 @@
-package com.ginger.myjobserver2024.domain.domain.job.domain;
+package com.ginger.myjobserver2024.domain.job.domain;
 
-import com.ginger.myjobserver2024.domain.domain.company.domain.Company;
-import com.ginger.myjobserver2024.domain.domain.job.dto.JobModel;
-import com.ginger.myjobserver2024.domain.domain.job.dto.JobResponseDto;
+import com.ginger.myjobserver2024.domain.company.domain.Company;
+import com.ginger.myjobserver2024.domain.job.dto.JobModel;
 import com.ginger.myjobserver2024.global.common.BaseTimeEntity;
 import jakarta.persistence.*;
 import lombok.*;

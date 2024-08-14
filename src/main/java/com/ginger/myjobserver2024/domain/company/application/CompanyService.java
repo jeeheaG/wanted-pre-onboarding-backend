@@ -1,7 +1,7 @@
-package com.ginger.myjobserver2024.domain.domain.company.application;
+package com.ginger.myjobserver2024.domain.company.application;
 
-import com.ginger.myjobserver2024.domain.domain.company.domain.Company;
-import com.ginger.myjobserver2024.domain.domain.company.repository.CompanyRepository;
+import com.ginger.myjobserver2024.domain.company.repository.CompanyRepository;
+import com.ginger.myjobserver2024.domain.company.domain.Company;
 import com.ginger.myjobserver2024.global.common.response.code.CommonCode;
 import com.ginger.myjobserver2024.global.common.response.exception.CompanyException;
 import lombok.extern.slf4j.Slf4j;

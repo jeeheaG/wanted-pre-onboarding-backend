@@ -1,7 +1,7 @@
-package com.ginger.myjobserver2024.domain.domain.job.dto;
+package com.ginger.myjobserver2024.domain.job.dto;
 
-import com.ginger.myjobserver2024.domain.domain.company.domain.Company;
-import com.ginger.myjobserver2024.domain.domain.job.domain.Job;
+import com.ginger.myjobserver2024.domain.company.domain.Company;
+import com.ginger.myjobserver2024.domain.job.domain.Job;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
