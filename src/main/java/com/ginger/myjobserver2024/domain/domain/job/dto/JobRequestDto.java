@@ -61,4 +61,38 @@ public class JobRequestDto {
                     .build();
         }
     }
+
+    /**
+     * 채용공고 수정 요청 dto
+     */
+    @ToString
+    @Getter
+    @Builder
+    @NoArgsConstructor
+    @AllArgsConstructor
+    public static class UpdateJob {
+
+        private String country;
+
+        private String region;
+
+        private String position;
+
+        private Integer reward;
+
+        private String tech;
+
+        private String content;
+
+        public JobModel.UpdateJob toModel() {
+            return JobModel.UpdateJob.builder()
+                    .country(this.country)
+                    .region(this.region)
+                    .position(this.position)
+                    .reward(this.reward)
+                    .tech(this.tech)
+                    .content(this.content)
+                    .build();
+        }
+    }
 }

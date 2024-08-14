@@ -7,7 +7,6 @@ import com.ginger.myjobserver2024.domain.domain.job.domain.Job;
 import com.ginger.myjobserver2024.domain.domain.job.dto.JobRequestDto;
 import com.ginger.myjobserver2024.domain.domain.job.dto.JobResponseDto;
 import com.ginger.myjobserver2024.global.common.response.CommonResponse;
-import com.ginger.myjobserver2024.global.common.response.code.CommonCode;
 import com.ginger.myjobserver2024.global.common.response.code.JobCode;
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
@@ -41,7 +40,7 @@ public class JobController {
 
         Company company = companyService.findCompanyById(requestDto.getCompanyId());
 
-        jobService.saveJob(requestDto.toEntity(company));
+        jobService.saveJob(requestDto.toEntity(company)); // TODO : Job 도메인에 createJob 이런식으로 옮기기
 
         return ResponseEntity.ok(CommonResponse.toResponse(JobCode.SUCCESS_CREATE_JOB));
     }
@@ -58,6 +57,21 @@ public class JobController {
         Job job = jobService.getJobById(jobId);
 
         return ResponseEntity.ok(CommonResponse.toResponse(JobCode.SUCCESS_GET_JOB_DETAIL, JobResponseDto.DetailJob.toDto(job)));
+    }
+
+    /**
+     * 채용공고 수정 api
+     * @param jobId
+     * @param requestDto
+     * @return
+     */
+    @PatchMapping("/{jobId}")
+    public ResponseEntity<Object> updateJob(@PathVariable Long jobId, @RequestBody @Valid JobRequestDto.UpdateJob requestDto) {
+        log.info("[API] PATCH /jobs/{}", jobId);
+
+        Job job = jobService.updateJob(jobId, requestDto.toModel());
+
+        return ResponseEntity.ok(CommonResponse.toResponse(JobCode.SUCCESS_UPDATE_JOB, JobResponseDto.DetailJob.toDto(job)));
     }
 
 }

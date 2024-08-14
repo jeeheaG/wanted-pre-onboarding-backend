@@ -1,6 +1,7 @@
 package com.ginger.myjobserver2024.domain.domain.job.domain;
 
 import com.ginger.myjobserver2024.domain.domain.company.domain.Company;
+import com.ginger.myjobserver2024.domain.domain.job.dto.JobModel;
 import com.ginger.myjobserver2024.domain.domain.job.dto.JobResponseDto;
 import com.ginger.myjobserver2024.global.common.BaseTimeEntity;
 import jakarta.persistence.*;
@@ -49,4 +50,16 @@ public class Job extends BaseTimeEntity {
     @OnDelete(action = OnDeleteAction.CASCADE)
     private Company company;
 
+    /**
+     * 채용공고 정보를 수정할 때 사용하는 메서드
+     * @param model
+     */
+    public void updateJobInfo(JobModel.UpdateJob model) {
+        this.country = model.getCountry();
+        this.region = model.getRegion();
+        this.position = model.getPosition();
+        this.tech = model.getTech();
+        this.reward = model.getReward();
+        this.content = model.getContent();
+    }
 }

@@ -1,6 +1,7 @@
 package com.ginger.myjobserver2024.domain.domain.job.application;
 
 import com.ginger.myjobserver2024.domain.domain.job.domain.Job;
+import com.ginger.myjobserver2024.domain.domain.job.dto.JobModel;
 import com.ginger.myjobserver2024.domain.domain.job.repository.JobRepository;
 import com.ginger.myjobserver2024.global.common.response.code.JobCode;
 import com.ginger.myjobserver2024.global.common.response.exception.JobException;
@@ -43,4 +44,16 @@ public class JobService {
     }
 
 
+    /**
+     * 채용공고 수정 메서드
+     * @param jobId
+     * @return
+     */
+    public Job updateJob(Long jobId, JobModel.UpdateJob model) {
+        Job job = getJobById(jobId);
+
+        job.updateJobInfo(model);
+
+        return jobRepository.save(job);
+    }
 }
