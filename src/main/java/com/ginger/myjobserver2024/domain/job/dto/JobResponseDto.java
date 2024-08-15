@@ -47,6 +47,7 @@ public class JobResponseDto {
     public static class SimpleJob {
         private Long jobId;
         private Long companyId;
+        private String companyName;
         private String country;
         private String region;
         private String position;
@@ -62,6 +63,7 @@ public class JobResponseDto {
             return SimpleJob.builder()
                     .jobId(job.getId())
                     .companyId(job.getCompany().getId())
+                    .companyName(job.getCompany().getName())
                     .country(job.getCountry())
                     .region(job.getRegion())
                     .position(job.getPosition())
