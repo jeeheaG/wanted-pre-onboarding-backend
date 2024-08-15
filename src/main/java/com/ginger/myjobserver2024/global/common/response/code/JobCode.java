@@ -10,6 +10,7 @@ public enum JobCode implements StatusCode {
     SUCCESS_GET_JOB_DETAIL(HttpStatus.OK, "2002", "채용공고 상세 조회 성공"),
     SUCCESS_UPDATE_JOB(HttpStatus.OK, "2003", "채용공고 수정 성공"),
     SUCCESS_DELETE_JOB(HttpStatus.OK, "2004", "채용공고 삭제 성공"),
+    SUCCESS_GET_JOB_LIST(HttpStatus.OK, "2005", "채용공고 목록 조회 성공"),
 
     JOB_NOT_FOUND(HttpStatus.NOT_FOUND, "4101", "해당 id 값의 채용공고를 찾을 수 없음"),
     ;
