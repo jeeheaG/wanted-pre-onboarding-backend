@@ -2,10 +2,13 @@ package com.ginger.myjobserver2024.domain.job.application;
 
 import com.ginger.myjobserver2024.domain.job.domain.Job;
 import com.ginger.myjobserver2024.domain.job.dto.JobModel;
+import com.ginger.myjobserver2024.domain.job.dto.JobResponseDto;
 import com.ginger.myjobserver2024.domain.job.repository.JobRepository;
 import com.ginger.myjobserver2024.global.common.response.code.JobCode;
 import com.ginger.myjobserver2024.global.common.response.exception.JobException;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Slice;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -64,4 +67,16 @@ public class JobService {
     public void deleteJob(Long jobId) {
         jobRepository.delete(getJobById(jobId));
     }
+
+    /**
+     * 채용공고 목록 조회 메서드
+     * @param pageable
+     * @return
+     */
+    public JobResponseDto.GetJobList getJobList(Pageable pageable) {
+        Slice<Job> jobs = jobRepository.findAllByOrderByCreatedAtDesc(pageable);
+
+        return JobResponseDto.GetJobList.toDto(jobs);
+    }
+
 }

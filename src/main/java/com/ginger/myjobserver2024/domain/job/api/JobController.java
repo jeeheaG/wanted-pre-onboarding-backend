@@ -10,6 +10,7 @@ import com.ginger.myjobserver2024.global.common.response.CommonResponse;
 import com.ginger.myjobserver2024.global.common.response.code.JobCode;
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -43,6 +44,20 @@ public class JobController {
         jobService.saveJob(requestDto.toEntity(company)); // TODO : Job 도메인에 createJob 이런식으로 옮기기
 
         return ResponseEntity.ok(CommonResponse.toResponse(JobCode.SUCCESS_CREATE_JOB));
+    }
+
+    /**
+     * 채용공고 목록 조회 api
+     * @param pageable
+     * @return
+     */
+    @GetMapping
+    public ResponseEntity<Object> getJobList(Pageable pageable) {
+        log.info("[API] GET /jobs");
+
+        JobResponseDto.GetJobList responseDto = jobService.getJobList(pageable);
+
+        return ResponseEntity.ok(CommonResponse.toResponse(JobCode.SUCCESS_GET_JOB_LIST, responseDto));
     }
 
     /**
