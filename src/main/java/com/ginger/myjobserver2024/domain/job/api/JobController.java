@@ -89,6 +89,11 @@ public class JobController {
         return ResponseEntity.ok(CommonResponse.toResponse(JobCode.SUCCESS_UPDATE_JOB, JobResponseDto.DetailJob.toDto(job)));
     }
 
+    /**
+     * 채용공고 삭제 api
+     * @param jobId
+     * @return
+     */
     @DeleteMapping
     public ResponseEntity<Object> deleteJob(@PathVariable Long jobId) {
         log.info("[API] DELETE /jobs/{}", jobId);
