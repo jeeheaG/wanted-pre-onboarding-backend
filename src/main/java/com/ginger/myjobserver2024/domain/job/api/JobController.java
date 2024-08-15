@@ -94,7 +94,7 @@ public class JobController {
      * @param jobId
      * @return
      */
-    @DeleteMapping
+    @DeleteMapping("/{jobId}")
     public ResponseEntity<Object> deleteJob(@PathVariable Long jobId) {
         log.info("[API] DELETE /jobs/{}", jobId);
 
