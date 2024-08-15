@@ -18,5 +18,7 @@ spring:
     defer-datasource-initialization: true
     hibernate:
       ddl-auto: update #create, create-drop, none, update
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.CamelCaseToUnderscoresNamingStrategy # set DB column name by snake case
     show-sql: true # sql logging
     generate-ddl: true
