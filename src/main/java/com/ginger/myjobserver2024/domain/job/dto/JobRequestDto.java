@@ -84,6 +84,10 @@ public class JobRequestDto {
 
         private String content;
 
+        /**
+         * 해당 dto 객체를 Model 클래스로 만들어주는 메서드
+         * @return
+         */
         public JobModel.UpdateJob toModel() {
             return JobModel.UpdateJob.builder()
                     .country(this.country)
