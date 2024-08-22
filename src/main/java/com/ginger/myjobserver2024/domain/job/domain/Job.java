@@ -25,9 +25,6 @@ public class Job extends BaseTimeEntity {
     @Column(nullable = false, unique = true, updatable = false)
     private Long id;
 
-//    @Column(nullable = false, length = 30)
-//    private String title;
-
     @Column(nullable = false, length = 30)
     private String country;
 
