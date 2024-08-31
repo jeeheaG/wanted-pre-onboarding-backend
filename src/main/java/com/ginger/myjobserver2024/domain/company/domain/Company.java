@@ -18,7 +18,7 @@ import lombok.*;
 public class Company extends BaseTimeEntity {
 
     @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    @GeneratedValue(strategy = GenerationType.IDENTITY) // uuid 사용 안함
     @Column(nullable = false, unique = true)
     private Long id;
 
