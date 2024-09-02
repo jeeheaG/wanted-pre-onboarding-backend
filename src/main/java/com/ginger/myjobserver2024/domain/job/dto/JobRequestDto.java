@@ -63,7 +63,7 @@ public class JobRequestDto {
     }
 
     /**
-     * 채용공고 수정 요청 dto
+     * 채용공고 수정 요청 dto 클래스
      */
     @ToString
     @Getter
