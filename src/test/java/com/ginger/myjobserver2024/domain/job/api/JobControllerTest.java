@@ -31,7 +31,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 /**
  * 채용공고 api 의 컨트롤러단 메서드 테스트 클래스
  */
-@WithMockUser // 모두 권한이 필요하지 않은 요청들
+@WithMockUser // Spring Security 처리 : 모두 권한이 필요하지 않은 요청들
 @DisplayName("[채용공고] 컨트롤러 단위 테스트")
 @WebMvcTest(controllers = {JobController.class})
 class JobControllerTest {
@@ -52,7 +52,7 @@ class JobControllerTest {
     class CreateJob {
 
         @Nested
-        @DisplayName("Success")
+        @DisplayName("Success case")
         class SuccessCase {
 
             @Test
@@ -99,15 +99,9 @@ class JobControllerTest {
                         .andDo(print())
                 ;
             }
-
         }
-
     }
 
-
-    @Test
-    void getJobList() {
-    }
 
     @Test
     void getJobDetail() {
